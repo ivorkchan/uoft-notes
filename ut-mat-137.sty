@@ -3,25 +3,36 @@
 \usepackage{mhsetup}
 \usepackage{mathtools}
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{mathdots}
 \usepackage{enumitem}
 \usepackage{array}
 \usepackage{multicol}
 \usepackage{ifthen}
 \usepackage{mdframed}
 \usepackage{xparse}
+\usepackage{calc}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{tcolorbox}
+\usepackage{wrapfig}
+\usepackage{marginnote}
+\usepackage{mparhack}
+\usepackage{marginfix}
+\usepackage{indextools}
+\noprintanswers
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
 \usepackage[all]{xy}
+
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \pgfplotsset{soldot/.style={color=blue,only marks,mark=*}}
 \pgfplotsset{holdot/.style={color=blue,fill=white,only marks,mark=*}}
 
+\printanswers
+\checkedchar{{\textcircled{$\checkmark$}}}
 \addtolength{\textheight}{3cm}
 \addtolength{\textwidth}{3cm}
 \addtolength{\topmargin}{-1cm}
@@ -29,6 +40,10 @@
 \addtolength{\evensidemargin}{-1.5cm}
 \setlength\parindent{0pt}
 
+\hfuzz=\maxdimen
+\hbadness=10000
+
+\newcommand{\set}[1]{\left\{ #1 \right\}}
 \newcommand{\answer}[1]{\textcolor{blue}{#1}}
 \newcommand{\link}[2]{\href{#1}{\textcolor{blue}{#2}}}
 
@@ -69,6 +84,7 @@
 {}                  % Theorem head spec (can be left empty, meaning ‘normal’)
 
 \theoremstyle{nospace}
+\newtheorem{theorem}{Theorem}
 \newtheorem{case}{Case}
 \newtheorem{note}{Note}
 
@@ -76,6 +92,7 @@
 \renewcommand{\item}{\setcounter{case}{0}\olditem}
 
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
@@ -84,10 +101,12 @@
 \newcommand{\iand}{\textit{ AND }}
 \newcommand{\ior}{\textit{ OR }}
 
-\DeclarePairedDelimiter{\pa}{\lparen}{\rparen}
-\DeclarePairedDelimiter{\br}{\lbrack}{\rbrack}
-\DeclarePairedDelimiter{\cbr}{\lbrace}{\rbrace}
+\DeclarePairedDelimiter{\pa}{(}{)}
+\DeclarePairedDelimiter{\br}{[}{]}
+\DeclarePairedDelimiter{\cbr}{\{}{\}}
 \DeclarePairedDelimiter{\ang}{\langle}{\rangle}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\dabs}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\eval}{.}{\rvert}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
