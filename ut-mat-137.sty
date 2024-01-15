@@ -20,7 +20,6 @@
 \usepackage{mparhack}
 \usepackage{marginfix}
 \usepackage{indextools}
-\noprintanswers
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
@@ -31,7 +30,6 @@
 \pgfplotsset{soldot/.style={color=blue,only marks,mark=*}}
 \pgfplotsset{holdot/.style={color=blue,fill=white,only marks,mark=*}}
 
-\printanswers
 \checkedchar{{\textcircled{$\checkmark$}}}
 \addtolength{\textheight}{3cm}
 \addtolength{\textwidth}{3cm}
@@ -42,6 +40,7 @@
 
 \hfuzz=\maxdimen
 \hbadness=10000
+\vbadness=10000
 
 \newcommand{\set}[1]{\left\{ #1 \right\}}
 \newcommand{\answer}[1]{\textcolor{blue}{#1}}
