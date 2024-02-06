@@ -1,34 +1,40 @@
 \ProvidesPackage{ut-mat-137}
 
+\hfuzz=\maxdimen
+\hbadness=10000
+\vbadness=10000
+
 \usepackage{mhsetup}
 \usepackage{mathtools}
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
 \usepackage{mathdots}
-\usepackage{enumitem}
-\usepackage{array}
-\usepackage{multicol}
-\usepackage{ifthen}
-\usepackage{mdframed}
-\usepackage{xparse}
 \usepackage{calc}
-\usepackage{geometry}
-\usepackage{graphicx}
-\usepackage{color}
-\usepackage{tcolorbox}
-\usepackage{wrapfig}
-\usepackage{marginnote}
-\usepackage{mparhack}
-\usepackage{marginfix}
+\usepackage{ifthen}
 \usepackage{indextools}
-
-\usepackage{tikz}
-\usetikzlibrary{shapes,backgrounds}
-\usepackage[all]{xy}
+\usepackage{xparse}
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \pgfplotsset{soldot/.style={color=blue,only marks,mark=*}}
 \pgfplotsset{holdot/.style={color=blue,fill=white,only marks,mark=*}}
+
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds}
+\usepackage[all]{xy}
+
+\usepackage{mparhack}
+\usepackage{marginfix}
+\usepackage{marginnote}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{geometry}
 
 \checkedchar{{\textcircled{$\checkmark$}}}
 \addtolength{\textheight}{3cm}
@@ -38,39 +44,28 @@
 \addtolength{\evensidemargin}{-1.5cm}
 \setlength\parindent{0pt}
 
-\hfuzz=\maxdimen
-\hbadness=10000
-\vbadness=10000
-
-\newcommand{\set}[1]{\left\{ #1 \right\}}
-\newcommand{\answer}[1]{\textcolor{blue}{#1}}
-\newcommand{\link}[2]{\href{#1}{\textcolor{blue}{#2}}}
-
 \pagestyle{empty}
 
-%============================================
+%=============================================
 % COLOUR PALETTE
-%============================================
+%=============================================
 
 \definecolor{137cp1}{RGB}{15, 35, 160}
 \definecolor{137cp2}{RGB}{50, 160, 250}
 \definecolor{137cp3}{RGB}{255, 65, 100}
 \definecolor{137cp4}{RGB}{230, 145, 5}
 
-%============================================
+%=============================================
 % HYPERLINKS
-%============================================
+%=============================================
 
 \usepackage{hyperref}
 \hypersetup{colorlinks}
 \hypersetup{urlcolor=137cp3, linkcolor=137cp1}
 
-%============================================
-% Custom
-%============================================
-
-\newcommand {\DS}[1]{${\displaystyle #1}$}
-\newcommand{\ds}{\displaystyle}
+%=============================================
+% THEOREM
+%=============================================
 
 \newtheoremstyle{nospace}
 {0pt}               % Space above
@@ -80,15 +75,23 @@
 {\bfseries}         % Theorem head font
 {.}                 % Punctuation after theorem head
 {.5em}              % Space after theorem head
-{}                  % Theorem head spec (can be left empty, meaning ‘normal’)
+{}                  % Theorem head spec
 
 \theoremstyle{nospace}
 \newtheorem{theorem}{Theorem}
 \newtheorem{case}{Case}
 \newtheorem{note}{Note}
 
-\let\olditem\item
-\renewcommand{\item}{\setcounter{case}{0}\olditem}
+%=============================================
+% CUSTOM COMMANDS
+%=============================================
+
+\newcommand{\ds}{\displaystyle}
+\newcommand {\DS}[1]{${\displaystyle #1}$}
+
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\answer}[1]{\textcolor{blue}{#1}}
+\newcommand{\link}[2]{\href{#1}{\textcolor{blue}{#2}}}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
